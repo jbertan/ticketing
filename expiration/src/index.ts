@@ -2,6 +2,7 @@ import { natsWrapper } from "./nats-wrapper";
 import { OrderCreatedEvent } from "@babtickets/common";
 import { OrderCreatedListener } from "./events/listeners/order-created-listener";
 const start = async () => {
+  console.log("Digital Ocean Test");
   if (!process.env.NATS_CLIENT_ID) {
     throw new Error("NATS_CLIENT_ID must be defined");
   }

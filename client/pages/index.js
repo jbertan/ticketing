@@ -9,7 +9,7 @@ const LandingPage = ({ currentUser, tickets }) => {
   return (
     <div className="flex flex-col w-full h-screen">
       <div className="flex justify-center items-center text-4xl">
-        Welcome to the Ticket Shop
+        Wilkommen to the Ticket Shop
       </div>
 
       {tickets &&

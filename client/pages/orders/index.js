@@ -20,12 +20,9 @@ const OrderIndex = (props) => {
 };
 
 export const getServerSideProps = async (context) => {
-  const response = await fetch(
-    "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/orders",
-    {
-      headers: context.req.headers,
-    }
-  );
+  const response = await fetch("http://www.slowcookbarbeque.com/api/orders", {
+    headers: context.req.headers,
+  });
   const orders = await response.json();
 
   return { props: { orders } };

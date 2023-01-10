@@ -46,12 +46,9 @@ const LandingPage = ({ currentUser, tickets }) => {
   return { tickets: data };
 }; */
 export const getServerSideProps = async (context) => {
-  const response = await fetch(
-    "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/tickets",
-    {
-      headers: context.req.headers,
-    }
-  );
+  const response = await fetch("http://www.slowcookbarbeque.com/api/tickets", {
+    headers: context.req.headers,
+  });
 
   const data = await response.json();
 

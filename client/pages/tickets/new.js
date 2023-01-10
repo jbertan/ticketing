@@ -85,7 +85,7 @@ export const getServerSideProps = async (context) => {
   //BuildClient on ly gives instance we need to supply .get api properties
   if (
     context.req.headers.cookie &&
-    context.req.headers.host === "ticketing.dev"
+    context.req.headers.host === "www.slowcookbarbeque.com"
   ) {
     const { data } = await BuildClient(context).get("/api/users/currentuser");
     console.log(data);

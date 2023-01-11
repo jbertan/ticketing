@@ -6,7 +6,7 @@ const Header = (props) => {
   const [setValue, forceUpdate] = useReducer((x) => x + 1, 1);
   const [currentUser, setCurrentUser] = useState(null);
   const fetchUser = () => {
-    fetch("/api/users/currentUser")
+    fetch("http://www.barbeque.com/api/users/currentUser")
       .then((response) => response.json())
       .then((data) => setCurrentUser({ ...data.currentUser }));
   };

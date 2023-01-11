@@ -48,13 +48,13 @@ const orderShow = (props) => {
 };
 export const getServerSideProps = async (context) => {
   const response = await fetch(
-    `http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/orders/${context.params.orderId}`,
+    `http://www.slowcookbarbeque.com/api/orders/${context.params.orderId}`,
     {
       headers: context.req.headers,
     }
   );
   const responseUser = await fetch(
-    `http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/users/currentUser/`,
+    `http://www.slowcookbarbeque.com/api/users/currentUser/`,
     {
       headers: context.req.headers,
     }

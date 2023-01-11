@@ -16,10 +16,10 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: cd clients && docker build -t jbertan/clients .
-      - run: docker push jbertan/clients
+      - run: cd clients && docker build -t jbertan/client .
+      - run: docker push jbertan/client
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - run: doctl kubernetes cluster kubeconfig save ticketing
-      - run: kubectl rollout restart deployment clients-depl
+      - run: kubectl rollout restart deployment client-depl

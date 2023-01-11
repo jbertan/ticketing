@@ -68,7 +68,7 @@ export const getStaticProps = async (context, req) => {
   );
   const ticket = await res.json();
 
-  return { props: { ticket } };
+  return { props: { ticket }, revalidate: 30 };
 };
 
 export default TicketShow;

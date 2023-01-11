@@ -39,7 +39,7 @@ const TicketShow = ({ ticket }) => {
   );
 };
 export const getStaticPaths = async () => {
-  const response = await fetch(`http://www.slowcookbarbeque.com/api/tickets`);
+  const response = await fetch(`http://ticketing.dev/api/tickets`);
 
   const tickets = await response.json();
   const paths = tickets.map((ticket) => ({
@@ -64,7 +64,7 @@ export const getStaticProps = async (context, req) => {
   //const { ticketsId } = context.query;
   console.log(context);
   const res = await fetch(
-    `http://www.slowcookbarbeque.com/api/tickets/${context.params.ticketsId}`
+    `http://ticketing.dev/api/tickets/${context.params.ticketsId}`
   );
   const ticket = await res.json();
 

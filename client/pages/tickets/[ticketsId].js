@@ -46,7 +46,7 @@ export const getStaticPaths = async () => {
     params: { ticketsId: ticket.id },
   }));
 
-  return { paths, fallback: "blocking" };
+  return { paths, fallback: false };
 };
 /* export const getServerSideProps = async (context) => {
   const { ticketsId } = context.query;

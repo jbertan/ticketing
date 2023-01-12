@@ -39,7 +39,7 @@ const TicketShow = ({ ticket }) => {
   );
 };
 export const getStaticPaths = async () => {
-  const response = await fetch(`http://www.slowcookbarbeque/api/tickets`);
+  const response = await fetch("http://www.slowcookbarbeque.com/api/tickets");
 
   const tickets = await response.json();
   const paths = tickets.map((ticket) => ({

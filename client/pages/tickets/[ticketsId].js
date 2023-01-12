@@ -39,14 +39,14 @@ const TicketShow = ({ ticket }) => {
   );
 };
 export const getStaticPaths = async () => {
-  const response = await fetch(`http://www.slowcookbarbeque/api/tickets`);
+  const response = await fetch("http://www.slowcookbarbeque.com/api/tickets");
 
   const tickets = await response.json();
   const paths = tickets.map((ticket) => ({
     params: { ticketsId: ticket.id },
   }));
 
-  return { paths, fallback: "blocking" };
+  return { paths, fallback: false };
 };
 /* export const getServerSideProps = async (context) => {
   const { ticketsId } = context.query;
